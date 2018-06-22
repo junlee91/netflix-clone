@@ -1,0 +1,60 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background-color: transparent;
+  transition: background-color 0.5s linear;
+  padding: 0 10px 0 10px;
+  display: flex;
+  justify-content: center;
+  height: 70px;
+}
+
+.black {
+  background-color: black;
+}
+
+.inner {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+}
+
+.js-header__left {
+  display: flex;
+  align-items: center;
+}
+
+.js-header__logo {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+  color: red;
+  cursor: pointer;
+}
+
+.js-header__primary-navigation {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+.js-header__listItem {
+  padding: 0 8px 0 8px;
+  color: white;
+  font-family: "Avenir Next";
+  cursor: pointer;
+}
+
+.js-header__secondary-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.js-header__navItem {
+  padding: 0 5px 0 5px;
+  color: white;
+  font-family: "Avenir Next";
+}

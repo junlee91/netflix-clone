@@ -2,19 +2,43 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Netflix-clone</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Netflix-clone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
-    <header class="header js-header"></header>
-    <video class="video js-video" src="https://ia800602.us.archive.org/4/items/mov-bbb/mov_bbb.mp4"></video>
+  <header class="js-header header">
+    <div class="inner">
 
-    <button class="js-playBtn">⏸</button>
-    <button class="js-muteBtn"></button>
-    <input type="range" min="0" max="1" step="0.1" class="js-range"/>
+      <div class="js-header__left">
+        <div class="js-header__logo">
+          <h1>Logo</h1>
+        </div>
+        <ul class="js-header__primary-navigation">
+          <li class="js-header__listItem">Home</li>
+          <li class="js-header__listItem">TV Shows</li>
+          <li class="js-header__listItem">Movies</li>
+          <li class="js-header__listItem">Originals</li>
+          <li class="js-header__listItem">Recently Added</li>
+          <li class="js-header__listItem">My List</li>
+        </ul>
+      </div>
+
+      <div class="js-header__secondary-navigation">
+        <div class="js-header__navItem">Search</div>
+        <div class="js-header__navItem">Bell</div>
+        <div class="js-header__navItem">Profile</div>
+        <div class="js-header__navItem">Arrow</div>
+      </div>
+    </div>
+  </header>
+  <video class="video js-video" src="https://ia800602.us.archive.org/4/items/mov-bbb/mov_bbb.mp4"></video>
+
+  <button class="js-playBtn">⏸</button>
+  <button class="js-muteBtn"></button>
+  <input type="range" min="0" max="1" step="0.1" class="js-range" />
 </body>
 
 </html>
