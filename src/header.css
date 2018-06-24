@@ -18,7 +18,7 @@
 
 .inner {
   display: flex;
-  width: 90%;
+  width: 95%;
   justify-content: space-between;
 }
 
@@ -31,8 +31,11 @@
   display: flex;
   align-items: center;
   margin-right: 30px;
-  color: red;
+}
+
+.js-header__netfilx_logo {
   cursor: pointer;
+  width: 118px;
 }
 
 .js-header__primary-navigation {
@@ -40,11 +43,16 @@
   display: flex;
   align-items: center;
 }
+
 .js-header__listItem {
   padding: 0 8px 0 8px;
   color: white;
   font-family: "Avenir Next";
   cursor: pointer;
+}
+.js-header__listItem:hover {
+  transition: all 0.2s ease-in-out;
+  color: gainsboro;
 }
 
 .js-header__secondary-navigation {
