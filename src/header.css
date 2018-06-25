@@ -6,7 +6,6 @@
   z-index: 9999;
   background-color: transparent;
   transition: background-color 0.5s linear;
-  padding: 0 10px 0 10px;
   display: flex;
   justify-content: center;
   height: 70px;
@@ -62,7 +61,11 @@
 }
 
 .js-header__navItem {
-  padding: 0 5px 0 5px;
+  padding: 0 10px 0 10px;
   color: white;
   font-family: "Avenir Next";
+  cursor: pointer;
+}
+.navItem__profile {
+  width: 30px;
 }
