@@ -5,7 +5,7 @@ const header = document.querySelector(".js-header"),
   muteBtn = document.querySelector(".js-muteBtn"),
   playBtn = document.querySelector(".js-playBtn"),
   range = document.querySelector(".js-range");
-
+  
 video.autoplay = true;
 video.loop = true;
 

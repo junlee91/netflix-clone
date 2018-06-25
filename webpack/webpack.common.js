@@ -38,9 +38,6 @@ const commonConfig = {
           },
           {
             loader: "img-loader"
-          },
-          {
-            loader: "file-loader"
           }
         ]
       }
