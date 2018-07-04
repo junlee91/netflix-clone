@@ -12,12 +12,13 @@
 }
 
 .black {
-  background-color: black;
+  background-color: rgb(20, 20, 20);
 }
 
 .inner {
   display: flex;
-  width: 95%;
+  width: 100%;
+  padding: 0 60px;
   justify-content: space-between;
 }
 

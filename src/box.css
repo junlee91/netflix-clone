@@ -1,27 +1,27 @@
 .content {
-  padding: 10px 30px 10px 30px;
+  padding: 0 80px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 100px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 200px;
   grid-gap: 5px;
 }
 
 .box {
   background-color: #f1c40f;
+  transition: all .3s ease-in-out;
 }
 
 .box:hover {
   transform: scale(1.5);
-  transition: transform .3s linear;
-  margin: 0 10px 0 10px;
+  margin: 0 8px;
 }
 
 .previous {
-  transform: translateX(-65px);
-  transition: transform .3s linear;
+  transform: translateX(-50px);
+  transition: all .3s ease-in-out;
 }
 
 .next {
-  transform: translateX(65px);
-  transition: transform .3s linear;
+  transform: translateX(50px);
+  transition: all .3s ease-in-out;
 }
