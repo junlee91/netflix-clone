@@ -1,0 +1,25 @@
+.content {
+  padding: 10px 30px 10px 30px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+}
+
+.box {
+  background-color: #f1c40f;
+}
+
+.box:hover {
+  transform: scale(1.3);
+  transition: transform .3s linear;
+}
+
+.previous {
+  transform: translateX(-10px);
+  transition: transform .1s linear;
+}
+
+.next {
+  transform: translateX(10px);
+  transition: transform .1s linear;
+}
