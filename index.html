@@ -10,6 +10,7 @@
 <link href="styles.css" rel="stylesheet"></head>
 
 <body>
+  <!-- Top navigation -->
   <header class="js-header header">
     <div class="inner">
 
@@ -35,11 +36,40 @@
       </div>
     </div>
   </header>
-  <video class="video js-video" src="https://ia800602.us.archive.org/4/items/mov-bbb/mov_bbb.mp4"></video>
+  <!-- End of Top Navigation -->
 
-  <button class="js-playBtn">⏸</button>
-  <button class="js-muteBtn"></button>
-  <input type="range" min="0" max="1" step="0.1" class="js-range" />
+  <video class="video js-video" src="https://ia800602.us.archive.org/4/items/mov-bbb/mov_bbb.mp4"></video>
+  
+  <!-- Video controller -->
+
+
+  <div class="js-videoController">
+      <div class="js-playBtn__container">
+          <div class="js-playBtn">
+              <i class="fa fa-play"></i>
+          </div>
+          <span class='js-playBtn__text'>Play</span>
+      </div>
+      <div class="js-volumeController">
+          <div class="js-muteBtn">
+              <i class="fa fa-volume-off fa-lg"></i>
+          </div>
+          <input class="js-range" type="range" min="0" max="1" step="0.01">
+      </div>
+  </div>
+
+  <!-- End of Video controller -->
+  
+  <!-- Content -->
+  <div class="content">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+  </div>
+  <!-- End of Content -->
 <script type="text/javascript" src="bundle.js"></script></body>
 
 </html>
