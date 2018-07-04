@@ -12,16 +12,22 @@ const loadMutedPreference = () => {
   const mutedPref = localStorage.getItem("muted");
   if (mutedPref !== null) {
     if (mutedPref === "true") {
-      video.muted = true;
-      muteBtn.innerHTML = "Unmute";
+      muteSound();
     } else {
-      video.muted = false;
-      muteBtn.innerHTML = "Mute";
+      unmuteSound();
     }
   } else {
-    video.muted = false;
-    muteBtn.innerHTML = "Mute";
+    unmuteSound();
   }
+};
+
+const muteSound = () => {
+  video.muted = true;
+  muteBtn.innerHTML = `<i class="fa fa-volume-off fa-lg"></i>`;
+};
+const unmuteSound = () => {
+  video.muted = false;
+  muteBtn.innerHTML = `<i class="fa fa-volume-up fa-lg"></i>`;
 };
 
 // ------------------------ Header Settings ------------------------
@@ -45,12 +51,10 @@ const handleScroll = event => {
 // ------------------------ Video Settings ------------------------
 const handleMuteBtnClick = () => {
   if (video.muted) {
-    video.muted = false;
-    muteBtn.innerHTML = "Mute";
+    unmuteSound();
     localStorage.setItem("muted", false);
   } else {
-    video.muted = true;
-    muteBtn.innerHTML = "Unmute";
+    muteSound();
     localStorage.setItem("muted", true);
   }
 };
@@ -71,32 +75,53 @@ const handleRageChange = event => {
 // ------------------------ Box Settings ------------------------
 const boxArray = Array.from(boxes);
 
-const findPreviousBoxes = element => {
-  const foundPreviousBoxes = [];
-  const findPrevious = element => {
+const findAllNext = element => {
+  const foundList = [];
+  const findNext = element => {
     if (element !== null) {
-      foundPreviousBoxes.push(element);
+      foundList.push(element);
+      const previousElement = element.nextElementSibling;
+      if (previousElement !== null) {
+        findNext(previousElement);
+      }
     }
   };
-  findPrevious(element.previousSibling);
+  findNext(element.nextElementSibling);
+  return foundList;
 };
 
-const handleBoxMouseOver = event => {
-  const box = event.target;
-  const previousOne = box.previousElementSibling;
-  const nextOne = box.nextElementSibling;
+const findAllPrevious = element => {
+  const foundList = [];
+  const findPrevious = element => {
+    if (element !== null) {
+      foundList.push(element);
+      const previousElement = element.previousElementSibling;
+      if (previousElement !== null) {
+        findPrevious(previousElement);
+      }
+    }
+  };
+  findPrevious(element.previousElementSibling);
+  return foundList;
+};
 
-  previousOne.classList.add("previous");
-  nextOne.classList.add("next");
+const handleBoxMouseEnter = event => {
+  const target = event.target;
+  const nextElements = findAllNext(target);
+  const previousElements = findAllPrevious(target);
+  nextElements.forEach(element => {
+    element.classList.add("next");
+  });
+  previousElements.forEach(element => {
+    element.classList.add("previous");
+  });
 };
 
 const handleBoxMouseLeave = event => {
-  const box = event.target;
-  const previousOne = box.previousElementSibling;
-  const nextOne = box.nextElementSibling;
-
-  previousOne.classList.remove("previous");
-  nextOne.classList.remove("next");
+  const { target } = event;
+  boxArray.forEach(box => {
+    box.classList.remove("next", "previous");
+  });
 };
 
 // ------------------------ Listener Settings ------------------------
@@ -107,7 +132,7 @@ const handleContentLoaded = () => {
   range.addEventListener("change", handleRageChange);
 
   boxArray.forEach(box => {
-    box.addEventListener("mouseover", handleBoxMouseOver);
+    box.addEventListener("mouseover", handleBoxMouseEnter);
     box.addEventListener("mouseleave", handleBoxMouseLeave);
   });
 
