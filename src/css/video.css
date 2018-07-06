@@ -1,0 +1,101 @@
+/* Video Controller CSS  */
+
+.js-videoController {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  top: 380px;
+  left: 50px;
+  z-index: 999;
+  /* border:1px solid white; */
+}
+
+.js-playBtn__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid white; */
+  padding: 5px 20px 5px 5px;
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100px;
+  margin-left: 50px;
+}
+.js-playBtn__container:hover {
+  color: black;
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+.js-playBtn__text {
+  font-family: "Avenir Next";
+  font-weight: 500;
+}
+
+.js-playBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border-radius: 50%; */
+  /* border: 1px solid white; */
+  /* color:white; */
+  background-color: transparent;
+  height: 40px;
+  width: 40px;
+}
+
+.js-volumeController {
+  display: flex;
+  width: 200px;
+}
+
+.js-muteBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+
+.js-muteBtn:hover {
+  color: black;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.js-range {
+  display: none;
+}
+
+.hero-video {
+  margin-top: -115px;
+  width: 100%;
+  height: 840px;
+  overflow: hidden;
+  background: black;
+}
+.hero-video__file {
+  top: 0;
+  max-width: 100%;
+  /* z-index: 3; */
+}
+.hero-video__volume {
+  z-index: 2;
+  bottom: 150px;
+  right: 60px;
+  font-size: 25px;
+  border: 2px solid white;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

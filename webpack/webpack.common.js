@@ -40,6 +40,10 @@ const commonConfig = {
             loader: "img-loader"
           }
         ]
+      },
+      {
+        test: /\.ogv$/,
+        use: ["file-loader"]
       }
     ]
   },

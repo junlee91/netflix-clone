@@ -6,7 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Netflix-clone</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
 </head>
 
 <body>
@@ -16,10 +17,10 @@
 
       <div class="js-header__left">
         <div class="js-header__logo">
-          <img class="js-header__netfilx_logo" src="<%= require("./images/netflix_logo.png") %>" alt="netflix">
+          <img class="js-header__netfilx_logo" src="<%= require("./img/netflix_logo.png") %>" alt="netflix">
         </div>
         <ul class="js-header__primary-navigation">
-          <li class="js-header__listItem">Home</li> 
+          <li class="js-header__listItem">Home</li>
           <li class="js-header__listItem">TV Shows</li>
           <li class="js-header__listItem">Movies</li>
           <li class="js-header__listItem">Originals</li>
@@ -29,46 +30,194 @@
       </div>
 
       <div class="js-header__secondary-navigation">
-        <div class="js-header__navItem"><i class="fas fa-search fa-lg"></i></div>
-        <div class="js-header__navItem"><i class="fas fa-bell fa-lg"></i></div>
+        <div class="js-header__navItem">
+          <i class="fas fa-search fa-lg"></i>
+        </div>
+        <div class="js-header__navItem">
+          <i class="fas fa-bell fa-lg"></i>
+        </div>
         <div class="js-header__navItem">KIDS</div>
-        <div class="js-header__navItem"><img class="navItem__profile" src="<%= require("./images/profile.png") %>" alt="profile"></div>
+        <div class="js-header__navItem">
+          <img class="navItem__profile" src="<%= require("./img/profile.png") %>" alt="profile">
+        </div>
       </div>
     </div>
   </header>
   <!-- End of Top Navigation -->
-
-  <video class="video js-video" src="https://ia800602.us.archive.org/4/items/mov-bbb/mov_bbb.mp4"></video>
   
   <!-- Video controller -->
-
-
-  <div class="js-videoController">
+  <div class="hero-video">
+    <div class="js-videoController">
       <div class="js-playBtn__container">
-          <div class="js-playBtn">
-              <i class="fa fa-play"></i>
-          </div>
-          <span class='js-playBtn__text'>Play</span>
+        <div class="js-playBtn">
+          <i class="fa fa-play"></i>
+        </div>
+        <span class='js-playBtn__text'>Play</span>
       </div>
       <div class="js-volumeController">
-          <div class="js-muteBtn">
-              <i class="fa fa-volume-off fa-lg"></i>
-          </div>
-          <input class="js-range" type="range" min="0" max="1" step="0.01">
+        <div class="js-muteBtn">
+          <i class="fa fa-volume-off fa-lg"></i>
+        </div>
+        <input class="js-range" type="range" min="0" max="1" step="0.01">
       </div>
+    </div>
+    <video src="<%=require("./videos/sintel.ogv")%>" class="hero-video__file js-hero-video__file"></video>
   </div>
 
   <!-- End of Video controller -->
-  
+
   <!-- Content -->
-  <div class="content">
-    <div class="box">1</div>
-    <div class="box">2</div>
-    <div class="box">3</div>
-    <div class="box">4</div>
-    <div class="box">5</div>
-    <div class="box">6</div>
-  </div>
+  <section class="movie-list">
+      <div class="movie-list__title">
+          <h2>Netflix Originals</h2>
+      </div>
+      <div class="movie-list__movies">
+          <div class="movie-list__movie" >
+              <div class="movie__slideshow">
+                  <img src="<%=require("./img/poster2.png")%>" />
+                  <img src="<%=require("./img/poster3.png")%>" />
+                  <img src="<%=require("./img/poster4.png")%>" />
+                  <img src="<%=require("./img/poster5.png")%>" />
+              </div>
+              <img src="<%=require("./img/poster.png")%>" alt="">
+              <div class="movie__overlay">
+                  <div class="overlay__play-button">
+                      <div class="play-button__container">
+                          <i class="fas fa-play"></i>
+                      </div>
+                  </div>
+                  <div class="movie__info">
+                      <h3 class="info__title">Netflix Series</h3>
+                      <h4 class="info__year">2018</h4>
+                      <p class="info__intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore enim impedit non quaerat. </p>
+                  </div>
+                  <div class="movie__arrow">
+                      <i class="fas fa-angle-down"></i>
+                  </div>
+              </div>                
+          </div>
+          <div class="movie-list__movie" >
+              <div class="movie__slideshow">
+                  <img src="<%=require("./img/poster.png")%>" />
+                  <img src="<%=require("./img/poster3.png")%>" />
+                  <img src="<%=require("./img/poster4.png")%>" />
+                  <img src="<%=require("./img/poster5.png")%>" />
+              </div>
+              <img src="<%=require("./img/poster2.png")%>" alt="">
+              <div class="movie__overlay">
+                  <div class="overlay__play-button">
+                      <div class="play-button__container">
+                          <i class="fas fa-play"></i>
+                      </div>
+                  </div>
+                  <div class="movie__info">
+                      <h3 class="info__title">Netflix Series</h3>
+                      <h4 class="info__year">2018</h4>
+                      <p class="info__intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore enim impedit non quaerat. </p>
+                  </div>
+                  <div class="movie__arrow">
+                      <i class="fas fa-angle-down"></i>
+                  </div>
+              </div>                
+          </div>
+          <div class="movie-list__movie" >
+              <div class="movie__slideshow">
+                  <img src="<%=require("./img/poster.png")%>" />
+                  <img src="<%=require("./img/poster2.png")%>" />
+                  <img src="<%=require("./img/poster4.png")%>" />
+                  <img src="<%=require("./img/poster5.png")%>" />
+              </div>
+              <img src="<%=require("./img/poster3.png")%>" alt="">
+              <div class="movie__overlay">
+                  <div class="overlay__play-button">
+                      <div class="play-button__container">
+                          <i class="fas fa-play"></i>
+                      </div>
+                  </div>
+                  <div class="movie__info">
+                      <h3 class="info__title">Netflix Series</h3>
+                      <h4 class="info__year">2018</h4>
+                      <p class="info__intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore enim impedit non quaerat. </p>
+                  </div>
+                  <div class="movie__arrow">
+                      <i class="fas fa-angle-down"></i>
+                  </div>
+              </div>                
+          </div>
+          <div class="movie-list__movie" >
+              <div class="movie__slideshow">
+                  <img src="<%=require("./img/poster.png")%>" />
+                  <img src="<%=require("./img/poster2.png")%>" />
+                  <img src="<%=require("./img/poster3.png")%>" />
+                  <img src="<%=require("./img/poster5.png")%>" />
+              </div>
+              <img src="<%=require("./img/poster4.png")%>" alt="">
+              <div class="movie__overlay">
+                  <div class="overlay__play-button">
+                      <div class="play-button__container">
+                          <i class="fas fa-play"></i>
+                      </div>
+                  </div>
+                  <div class="movie__info">
+                      <h3 class="info__title">Netflix Series</h3>
+                      <h4 class="info__year">2018</h4>
+                      <p class="info__intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore enim impedit non quaerat. </p>
+                  </div>
+                  <div class="movie__arrow">
+                      <i class="fas fa-angle-down"></i>
+                  </div>
+              </div>                
+          </div>
+          <div class="movie-list__movie">
+              <div class="movie__slideshow">
+                  <img src="<%=require("./img/poster.png")%>" />
+                  <img src="<%=require("./img/poster2.png")%>" />
+                  <img src="<%=require("./img/poster3.png")%>" />
+                  <img src="<%=require("./img/poster4.png")%>" />
+              </div>
+              <img src="<%=require("./img/poster5.png")%>" alt="">
+              <div class="movie__overlay">
+                  <div class="overlay__play-button">
+                      <div class="play-button__container">
+                          <i class="fas fa-play"></i>
+                      </div>
+                  </div>
+                  <div class="movie__info">
+                      <h3 class="info__title">Netflix Series</h3>
+                      <h4 class="info__year">2018</h4>
+                      <p class="info__intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore enim impedit non quaerat. </p>
+                  </div>
+                  <div class="movie__arrow">
+                      <i class="fas fa-angle-down"></i>
+                  </div>
+              </div>                
+          </div>
+          <div class="movie-list__movie" >
+              <div class="movie__slideshow">
+                  <img src="<%=require("./img/poster.png")%>" />
+                  <img src="<%=require("./img/poster2.png")%>" />
+                  <img src="<%=require("./img/poster3.png")%>" />
+                  <img src="<%=require("./img/poster4.png")%>" />
+              </div>
+              <img src="<%=require("./img/poster6.png")%>" alt="">
+              <div class="movie__overlay">
+                  <div class="overlay__play-button">
+                      <div class="play-button__container">
+                          <i class="fas fa-play"></i>
+                      </div>
+                  </div>
+                  <div class="movie__info">
+                      <h3 class="info__title">Netflix Series</h3>
+                      <h4 class="info__year">2018</h4>
+                      <p class="info__intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore enim impedit non quaerat. </p>
+                  </div>
+                  <div class="movie__arrow">
+                      <i class="fas fa-angle-down"></i>
+                  </div>
+              </div>                
+          </div>                                      
+      </div>
+  </section>
   <!-- End of Content -->
 </body>
 

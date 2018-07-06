@@ -1,7 +1,9 @@
 import "./styles.css";
+import "./js/utils";
+import "./js/featuredSlider";
 
 const header = document.querySelector(".js-header"),
-  video = document.querySelector(".js-video"),
+  video = document.querySelector(".hero-video__file"),
   muteBtn = document.querySelector(".js-muteBtn"),
   playBtn = document.querySelector(".js-playBtn"),
   range = document.querySelector(".js-range"),
@@ -58,15 +60,15 @@ const handleMuteBtnClick = () => {
     localStorage.setItem("muted", true);
   }
 };
-const handlePlayBtnClick = () => {
-  if (video.paused) {
-    playBtn.innerHTML = "⏸";
-    video.play();
-  } else {
-    playBtn.innerHTML = "▶️";
-    video.pause();
-  }
-};
+// const handlePlayBtnClick = () => {
+//   if (video.paused) {
+//     playBtn.innerHTML = `<i class="fas fa-pause"></i>`;
+//     video.play();
+//   } else {
+//     playBtn.innerHTML = `<i class="fa fa-play"></i>`;
+//     video.pause();
+//   }
+// };
 const handleRageChange = event => {
   const currentVolume = event.target.value;
   video.volume = currentVolume;
@@ -128,7 +130,7 @@ const handleBoxMouseLeave = event => {
 const handleContentLoaded = () => {
   window.addEventListener("scroll", handleScroll);
   muteBtn.addEventListener("click", handleMuteBtnClick);
-  playBtn.addEventListener("click", handlePlayBtnClick);
+  // playBtn.addEventListener("click", handlePlayBtnClick);
   range.addEventListener("change", handleRageChange);
 
   boxArray.forEach(box => {
